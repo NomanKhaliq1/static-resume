@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Resume - Noman Ghouri</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div id="resume" class="resume-wrapper">
+        <!-- Header -->
+        <header class="resume-header">
+            <div class="header-content">
+                <h1 class="resume-name">Noman Ghouri</h1>
+                <h2 class="resume-title">Full-Stack Web Developer</h2>
+                <p class="resume-contact">
+                    Agra Taj Colony, Karachi | <span>+92 308 2452 547</span> | 
+                    <span>nomanghouri.dev@gmail.com</span>
+                </p>
+            </div>
+        </header>
+
+        <!-- Objective -->
+        <section class="resume-section">
+            <h3 class="section-title">Objective</h3>
+            <p class="resume-objective">
+                A highly skilled full-stack developer with extensive experience in front-end and back-end technologies, specializing in WordPress customizations, plugin development, and function enhancements. Proficient in designing React-based websites and delivering high-quality, responsive, and user-friendly web applications.
+            </p>
+        </section>
+
+        <!-- Experience -->
+        <section class="resume-section">
+            <h3 class="section-title">Experience</h3>
+            <div class="resume-experience">
+                <div class="title-header">
+                    <h4 class="experience-role">Web Developer at Awesome Technologies Inc</h4>
+                    <p class="experience-date">2021 - Present</p>
+                </div>
+                <ul class="experience-details">
+                    <li>Developed and customized WordPress websites, creating tailored themes, plugins, and custom functionalities to meet client needs.</li>
+                    <li>Designed and implemented responsive, user-friendly interfaces using React and Webflow.</li>
+                    <li>Collaborated with cross-functional teams to align technical and visual aspects with business requirements.</li>
+                    <li>Ensured scalability, security, and seamless web performance through best coding practices.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h3 class="section-title">Education</h3>
+            <div class="resume-education">
+                <div class="title-header">
+                    <h4 class="education-degree">Diploma in Software Engineering, Aptech Pakistan</h4>
+                    <p class="education-date">2018 - 2021</p>
+                </div>
+                <p class="education-details">
+                    Completed a six-semester program, acquiring a comprehensive understanding of software engineering principles and practices.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="resume-section">
+            <h3 class="section-title">Skills & Abilities</h3>
+            <ul class="resume-skills">
+                <li>Front-End Technologies: HTML, CSS, JavaScript, React, Bootstrap, Tailwind CSS, Next.js, Webflow</li>
+                <li>Back-End Technologies: PHP, MySQL</li>
+                <li>Programming Languages: TypeScript, JavaScript, PHP</li>
+                <li>Content Management Systems: WordPress (theme customization, plugin development, advanced functions)</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Download Button -->
+    <div class="download-container">
+        <button id="download-btn" class="download-button">Download as PDF</button>
+    </div>
+
+    <script>
+        document.getElementById("download-btn").addEventListener("click", function () {
+            const element = document.getElementById("resume");
+    
+            html2pdf()
+                .set({
+                    margin: [0, 0, 0, 0], // Margins: Top, Right, Bottom, Left
+                    filename: 'Noman_Ghouri_Resume.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, scrollY: 0 }, // Fix scaling and scrolling
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                })
+                .from(element)
+                .save();
+        });
+    </script>    
+    
+</body>
+</html>
